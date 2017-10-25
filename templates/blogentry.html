@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% if blogs| length == 0 %}
+<p>No blogs yet</p>
+{% else %}
+
+<div class = "Blog">
+    {% for blogs in blog %}
+        <ul>
+            <li>{{Blog title}}</li>
+            <form method="POST" action="/blog" style="display:inline-block;">
+                <input type="hidden" name="blog-id" value="{{blog.id}}" />
+                
+            <li>{{body}}</li>
+                <input name="body" value="body">
+            </form> 
+</ul>
+    
+
+    {% endfor %}
+</div>
+
